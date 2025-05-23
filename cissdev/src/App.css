@@ -212,7 +212,7 @@ h6 {
   .navmenu a:focus,
   .navmenu .customLinks:focus{
     color: var(--nav-color);
-    font-size: 15px;
+    font-size: 20px;
     padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 400;
@@ -228,7 +228,7 @@ h6 {
   .navmenu .customLinks i,
   .navmenu a:focus i,
   .navmenu .customLinks:focus i {
-    font-size: 12px;
+    font-size: 20px;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
@@ -293,7 +293,7 @@ h6 {
 
   .navmenu .dropdown ul a i,
   .navmenu .dropdown ul .customLinks i {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .navmenu .dropdown ul a:hover,
@@ -595,6 +595,7 @@ h6 {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+  
 }
 
 /*--------------------------------------------------------------
@@ -805,6 +806,23 @@ section,
   color: var(--accent-color);
   line-height: 0;
 }
+.about .avatar-about {
+  width: 200px;
+}
+ .about-desc {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .about .avatar-about {
+    width: 125px; /* or whatever smaller value you want */
+    margin-left: 35%;
+  }
+   .about-desc {
+    display: block;
+    padding-bottom: 380px;
+  }
+}
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -855,7 +873,7 @@ section,
 # Skills Section
 --------------------------------------------------------------*/
 .skills .progress {
-  height: 60px;
+  height: 50px;
   display: block;
   background: none;
   border-radius: 0;

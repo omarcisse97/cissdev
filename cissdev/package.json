@@ -10,7 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-email/components": "^0.0.41",
+    "body-parser": "^2.2.0",
     "bootstrap": "^5.3.6",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.3",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
