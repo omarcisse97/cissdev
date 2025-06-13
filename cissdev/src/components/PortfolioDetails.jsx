@@ -8,7 +8,7 @@ import CartDrawer from '../assets/codebycisse-commerce/cartDrawer.png'
 import CartPage from '../assets/codebycisse-commerce/cartPage.png'
 import DarkModeSettings from '../assets/codebycisse-commerce/darkModeSettings.png'
 import ProductDetails from '../assets/codebycisse-commerce/productDetails.png'
-import ProfileSettings from '../assets/codebycisse-commerce/ProfileSettings.png'
+import ProfileSettings from '../assets/codebycisse-commerce/profileSettings.png'
 import SearchModel from '../assets/codebycisse-commerce/searchModal.png'
 import SearchPage from '../assets/codebycisse-commerce/searchPage.png'
 import Carousel from 'react-bootstrap/Carousel';
