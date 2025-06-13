@@ -37,8 +37,8 @@ const SkillsStats = (props) => {
                 </div>
 
                 <div className="container text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row align-items-start">
-                        <div class="col">
+                    <div className="row align-items-start">
+                        <div className="col">
                             <div className="progress">
                                 <span className="skill">
                                     <span>
@@ -89,7 +89,7 @@ const SkillsStats = (props) => {
                             </div>
                            
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <div className="progress">
                                 <span className="skill">
                                     <span>
@@ -140,7 +140,7 @@ const SkillsStats = (props) => {
                             </div>
                             
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <div className="progress">
                                 <span className="skill">
                                     <span>
@@ -192,7 +192,7 @@ const SkillsStats = (props) => {
 
 
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <div className="progress">
                                 <span className="skill">
                                     <span>

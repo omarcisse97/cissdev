@@ -1,9 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLoading } from "../contexts/LoadingContext";
+import { PageLoader } from "./LoaderComponents";
 import Nav from "./Nav";
 
 const Resume = () => {
     const [lang, setLang] = useState(localStorage.getItem('lang'));
+    const { globalLoading, setLoading, setComponentLoading, loadingStates } = useLoading();
+    const [ready, setReady] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        setComponentLoading('page', true);
+        setLang(localStorage.getItem('lang'));
+    }, []);
 
+    useEffect(() => {
+        if (lang) {
+            setComponentLoading('page', false);
+            setLoading(false);
+        }
+    }, [lang]);
+
+    useEffect(() => {
+
+
+        if (loadingStates && loadingStates['page'] !== null && loadingStates['page'] === false) {
+            setLoading(false);
+            const timer = setTimeout(() => {
+                setReady(true);
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [loadingStates]);
     const updateLang = (newLang) => {
         setLang(newLang);
         localStorage.setItem("lang", newLang);
@@ -13,7 +40,8 @@ const Resume = () => {
             <title>CodeByCisse - Resume</title>
             <div className="resume-page">
                 <Nav active="Resume" updateLang={updateLang} />
-                <main className="main">
+                {!ready && <PageLoader />}
+                {ready && <main className="main">
 
                     <div className="page-title" data-aos="fade">
                         <div className="heading">
@@ -173,7 +201,8 @@ const Resume = () => {
                         </div>
 
                     </section>
-                </main>
+                </main>}
+
             </div>
         </>
     );
