@@ -3,14 +3,7 @@ import { useLoading } from "../contexts/LoadingContext";
 import { PageLoader } from "./LoaderComponents";
 import { useParams } from "react-router"
 import Nav from "./Nav";
-import CodeByCisseHomePage from '../assets/codebycisse-commerce/homePage.png';
-import CartDrawer from '../assets/codebycisse-commerce/cartDrawer.png'
-import CartPage from '../assets/codebycisse-commerce/cartPage.png'
-import DarkModeSettings from '../assets/codebycisse-commerce/darkModeSettings.png'
-import ProductDetails from '../assets/codebycisse-commerce/productDetails.png'
-import ProfileSettings from '../assets/codebycisse-commerce/profileSettings.png'
-import SearchModel from '../assets/codebycisse-commerce/searchModal.png'
-import SearchPage from '../assets/codebycisse-commerce/searchPage.png'
+import { ImgProject } from "./DynamicImages";
 import Carousel from 'react-bootstrap/Carousel';
 
 const getProject = (handle) => {
@@ -25,21 +18,14 @@ const getProject = (handle) => {
                     "CodeByCisse-Commerce est une application web e-commerce full-stack développée avec React et Medusa.js, en suivant le modèle architectural MVC.L’application comprend notamment le filtrage des produits, des modales d’authentification, une interface responsive, et bien plus encore. Propulsée par Medusa.js, elle gère les données produits, les comptes clients, la tarification par région, ainsi que le traitement des commandes via une API REST propre et bien structurée. Le projet met l’accent sur la séparation des responsabilités, une conception modulaire et une architecture scalable, parfaitement adaptée aux plateformes de commerce modernes."
             },
             images: [
-                CodeByCisseHomePage,
-                SearchModel,
-                SearchPage,
-                CartDrawer,
-                CartPage,
-                ProductDetails,
-                ProfileSettings,
-                DarkModeSettings
+                ...ImgProject().codeByCisseCommerce
             ],
             technologies: ['React', 'MedusaJS', 'Stripe'],
             category: 'Full-Stack',
             status: 'Completed',
             links: {
                 demo: 'https://codebycisse-commerce-client-production.up.railway.app/',
-                github: '#',
+                github: '',
                 details: '/portfolio/details/codebycisse-commerce'
             },
             conclusion: {
@@ -48,11 +34,45 @@ const getProject = (handle) => {
                     french: 'Allier Code Propre et Performance pour un Commerce Web Moderne'
                 },
                 text: {
-                    english:'CodeByCisse-Commerce demonstrates the power of combining clean architecture, modern frameworks, and thoughtful UI/UX to deliver a scalable eCommerce experience. It showcases full-stack development with a strong focus on maintainability, responsiveness, and real-world commerce logic — making it a solid example of practical, production-ready code', 
-                    french:'CodeByCisse-Commerce illustre la puissance d’une architecture propre alliée à des frameworks modernes et une UX soignée pour créer une expérience e-commerce évolutive. Ce projet met en valeur un développement full-stack axé sur la maintenabilité, la réactivité et la logique métier réelle — un exemple concret de code prêt pour la production'
+                    english: 'CodeByCisse-Commerce demonstrates the power of combining clean architecture, modern frameworks, and thoughtful UI/UX to deliver a scalable eCommerce experience. It showcases full-stack development with a strong focus on maintainability, responsiveness, and real-world commerce logic — making it a solid example of practical, production-ready code',
+                    french: 'CodeByCisse-Commerce illustre la puissance d’une architecture propre alliée à des frameworks modernes et une UX soignée pour créer une expérience e-commerce évolutive. Ce projet met en valeur un développement full-stack axé sur la maintenabilité, la réactivité et la logique métier réelle — un exemple concret de code prêt pour la production'
+                }
+            }
+        },
+        {
+            id: 'codebycisse-restapi-framework',
+            title: 'Dynamic Modular Server',
+            description: {
+                english:
+                    'Dynamic Modular Server is a Node.js backend framework designed to load and manage modular REST APIs with full CRUD, access control, and admin UI. The system uses PostgreSQL, supports dynamic route injection, session management, and clean API key handling for robust permission flows.',
+                french:
+                    'Dynamic Modular Server est un framework backend Node.js conçu pour charger et gérer dynamiquement des API REST modulaires avec des opérations CRUD complètes, un contrôle d\'accès et une interface d’administration. Le système utilise PostgreSQL, prend en charge l’injection dynamique de routes, la gestion de session, et une gestion rigoureuse des clés API pour des permissions sécurisées.'
+            },
+            images: [
+                ...ImgProject().codeByCisseRestApiFramework
+            ],
+            technologies: ['Node.js', 'PostgreSQL', 'Express', 'Bootstrap'],
+            category: 'Backend',
+            status: 'In Progress',
+            links: {
+                demo: 'https://codebycisse-restapi-framework-production.up.railway.app/',
+                github: 'https://github.com/omarcisse97/codebycisse-restapi-framework',
+                details: '/portfolio/details/codebycisse-restapi-framework'
+            },
+            conclusion: {
+                title: {
+                    english: 'Scalable REST Framework with Modular Intelligence',
+                    french: 'Un Framework REST Modulaire et Evolutif'
+                },
+                text: {
+                    english:
+                        'Dynamic Modular Server showcases a scalable, flexible backend structure with modular loading of business logic, making it an ideal starting point for fast, maintainable REST API development.',
+                    french:
+                        'Dynamic Modular Server met en avant une structure backend flexible et évolutive avec chargement modulaire de la logique métier, parfait pour un développement rapide et maintenable d’API REST.'
                 }
             }
         }
+
         // Add more projects here
     ];
     return projects.find(p => p.id === handle) || null;
@@ -190,16 +210,17 @@ const PortfolioDetails = () => {
 
                                     <div className="col-lg-4">
                                         <div className="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                                            <h3>{lang === 'English'? 'Project information' : 'Information sur le Projet'}</h3>
+                                            <h3>{lang === 'English' ? 'Project information' : 'Information sur le Projet'}</h3>
                                             <ul>
-                                                <li><strong>{lang === 'English'? 'Category' : 'Categorie'}</strong>: {project?.category}</li>
-                                                <li><strong>{lang === 'English'? 'Project URL': 'Lien de Projet'}</strong>: <a href={project?.links?.demo} target="_blank">{project?.links?.demo}</a></li>
+                                                <li><strong>{lang === 'English' ? 'Category' : 'Categorie'}</strong>: {project?.category}</li>
+                                                <li><strong>{lang === 'English' ? 'Project URL' : 'Lien de Projet'}</strong>: <a href={project?.links?.demo} target="_blank">Click here</a></li>
+                                                {project?.links?.github !== '' && <li><strong>GitHub</strong> : <a href={project?.links?.github}>Click here</a></li>}
                                             </ul>
                                         </div>
                                         <div className="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                                            <h2>{lang === 'English'? project?.conclusion?.title?.english : project?.conclusion?.title?.english }</h2>
+                                            <h2>{lang === 'English' ? project?.conclusion?.title?.english : project?.conclusion?.title?.french}</h2>
                                             <p>
-                                               {lang === 'English'? project?.conclusion?.text?.english : project?.conclusion?.text?.english }
+                                                {lang === 'English' ? project?.conclusion?.text?.english : project?.conclusion?.text?.french}
                                             </p>
                                         </div>
                                     </div>

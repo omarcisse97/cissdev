@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import CodeByCisseHomePage from '../assets/codebycisse-commerce/homePage.png';
+import CodeByCisseRestAPI from '../assets/codebycisse-restapi-framework/displayModules.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "../contexts/ThemeContext";
 
 // ✅ CORRECT IMPORTS - Better icon variety
-import { 
+import {
     faEye,           // For "View Details" 
     faRocket,        // For "Live Demo"
     faCode,          // For category
@@ -30,7 +31,7 @@ const PortfolioImproved = () => {
     const { globalLoading, setLoading, setComponentLoading, loadingStates } = useLoading();
     const [ready, setReady] = useState(false);
     const { isDarkMode } = useTheme();
-    // Sample projects data (you can expand this)
+
     const projects = [
         {
             id: 'codebycisse-commerce',
@@ -45,11 +46,28 @@ const PortfolioImproved = () => {
             status: 'Completed',
             links: {
                 demo: 'https://codebycisse-commerce-client-production.up.railway.app/',
-                github: '#',
+                github: '',
                 details: '/portfolio/details/codebycisse-commerce'
             }
+        },
+        {
+            id: 'codebycisse-restapi-framework',
+            title: 'Dynamic Modular Server',
+            description: {
+                english: 'Node.js backend framework that dynamically loads and registers modules with customizable API endpoints, access control, and admin interfaces.',
+                french: 'Framework backend Node.js qui charge dynamiquement des modules avec des points de terminaison API personnalisables, un contrôle d\'accès et des interfaces administratives.'
+            },
+            image: CodeByCisseRestAPI,
+            technologies: ['Node.js', 'PostgreSQL', 'Express', 'Bootstrap'],
+            category: 'Backend',
+            status: 'In Progress',
+            links: {
+                demo: 'https://codebycisse-restapi-framework-production.up.railway.app/',
+                github: 'https://github.com/omarcisse97/codebycisse-restapi-framework',
+                details: '/portfolio/details/codebycisse-restapi-framework'
+            }
         }
-        // Add more projects here
+
     ];
 
     useEffect(() => {
@@ -96,7 +114,7 @@ const PortfolioImproved = () => {
                                         <div className="col-lg-8">
                                             <h1>Portfolio</h1>
                                             <p className="portfolio-subtitle">
-                                                {lang === "English" 
+                                                {lang === "English"
                                                     ? "Showcasing my latest projects and technical expertise"
                                                     : "Présentation de mes derniers projets et de mon expertise technique"
                                                 }
@@ -132,23 +150,32 @@ const PortfolioImproved = () => {
                                                     />
                                                     <div className="portfolio-overlay">
                                                         <div className="portfolio-links">
-                                                            <Link 
-                                                                to={project.links.details} 
+                                                            <Link
+                                                                to={project.links.details}
                                                                 title={lang === "English" ? "View Details" : "Voir Détails"}
                                                                 className="portfolio-link details-link"
                                                             >
-                                                                <FontAwesomeIcon icon={faEye} style={{color: !isDarkMode? 'black': ''}} />
+                                                                <FontAwesomeIcon icon={faEye} style={{ color: !isDarkMode ? 'black' : '' }} />
                                                             </Link>
-                                                            <a 
-                                                                href={project.links.demo} 
+                                                            <a
+                                                                href={project.links.demo}
                                                                 title={lang === "English" ? "Live Demo" : "Démo Live"}
                                                                 className="portfolio-link demo-link"
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                             >
-                                                                <FontAwesomeIcon icon={faRocket} style={{color: !isDarkMode? 'black': ''}} />
+                                                                <FontAwesomeIcon icon={faRocket} style={{ color: !isDarkMode ? 'black' : '' }} />
                                                             </a>
-                                                           
+                                                            {project?.links?.github !== '' && <a
+                                                                href={project.links.github}
+                                                                title={lang === "English" ? "GitHub" : "GitHub"}
+                                                                className="portfolio-link github-link"
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                            >
+                                                                <FontAwesomeIcon icon={faGithub} style={{ color: !isDarkMode ? 'black' : '' }} />
+                                                            </a>}
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,10 +195,10 @@ const PortfolioImproved = () => {
                                                     </div>
 
                                                     <h4 className="portfolio-title">{project.title}</h4>
-                                                    
+
                                                     <p className="portfolio-description">
-                                                        {lang === 'English' 
-                                                            ? project.description.english 
+                                                        {lang === 'English'
+                                                            ? project.description.english
                                                             : project.description.french
                                                         }
                                                     </p>
@@ -186,14 +213,14 @@ const PortfolioImproved = () => {
 
                                                     {/* Action Links */}
                                                     <div className="portfolio-actions">
-                                                        <Link 
+                                                        <Link
                                                             to={project.links.details}
                                                             className="action-btn details-btn"
                                                         >
                                                             <FontAwesomeIcon icon={faEye} />
                                                             <span>{lang === "English" ? "View Details" : "Voir Détails"}</span>
                                                         </Link>
-                                                        <a 
+                                                        <a
                                                             href={project.links.demo}
                                                             className="action-btn demo-btn"
                                                             target="_blank"
@@ -202,7 +229,7 @@ const PortfolioImproved = () => {
                                                             <FontAwesomeIcon icon={faRocket} />
                                                             <span>{lang === "English" ? "Live Demo" : "Démo Live"}</span>
                                                         </a>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,7 +247,7 @@ const PortfolioImproved = () => {
                                                 </div>
                                                 <h4>{lang === "English" ? "More Projects Coming Soon" : "Plus de Projets Bientôt"}</h4>
                                                 <p>
-                                                    {lang === "English" 
+                                                    {lang === "English"
                                                         ? "I'm constantly working on new projects. Check back soon for more exciting work!"
                                                         : "Je travaille constamment sur de nouveaux projets. Revenez bientôt pour plus de travaux passionnants!"
                                                     }
