@@ -71,16 +71,46 @@ const getProject = (handle) => {
                         'Dynamic Modular Server met en avant une structure backend flexible et évolutive avec chargement modulaire de la logique métier, parfait pour un développement rapide et maintenable d’API REST.'
                 }
             }
+        },
+        {
+    id: 'codebycisse-social',
+    title: 'YuConnect Social Platform',
+    description: {
+        english: 'YuConnect is a full-stack social media platform with headless backend architecture, featuring real-time messaging, user profiles, posts, and interactive social features. Built with React frontend and Node.js API server, it demonstrates modern web development practices with Socket.IO for real-time communication and PostgreSQL for robust data management.',
+        french: 'YuConnect est une plateforme de médias sociaux complète avec architecture backend découplée, offrant messagerie en temps réel, profils d\'utilisateurs, publications et fonctionnalités sociales interactives. Construite avec React en frontend et serveur API Node.js, elle démontre les pratiques modernes de développement web avec Socket.IO pour la communication temps réel et PostgreSQL pour une gestion robuste des données.'
+    },
+    images: [
+        ...ImgProject().codeByCisseSocial
+    ],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.IO', 'Express', 'Tailwind CSS'],
+    category: 'Full Stack',
+    status: 'In Progress',
+    links: {
+        demo: 'https://codebycisse-social-production.up.railway.app/',
+        github: {
+            client: 'https://github.com/omarcisse97/codebycisse-social',
+            backend: 'https://github.com/omarcisse97/codebycisse-social-server'
+        }, 
+        details: '/portfolio/details/codebycisse-social'
+    },
+    conclusion: {
+        title: {
+            english: 'Modern Social Platform with Real-Time Communication',
+            french: 'Plateforme Sociale Moderne avec Communication Temps Réel'
+        },
+        text: {
+            english: 'YuConnect demonstrates the implementation of a modern social media platform using headless architecture and real-time technologies. The project showcases full-stack development skills with emphasis on user experience, scalable backend design, and interactive social features.',
+            french: 'YuConnect démontre l\'implémentation d\'une plateforme de médias sociaux moderne utilisant une architecture découplée et des technologies temps réel. Le projet met en valeur les compétences de développement full-stack avec un accent sur l\'expérience utilisateur, la conception backend évolutive, et les fonctionnalités sociales interactives.'
         }
-
-        // Add more projects here
+    }
+}
     ];
     return projects.find(p => p.id === handle) || null;
 };
 
 const PortfolioDetails = () => {
     const [lang, setLang] = useState(null);
-    const { globalLoading, setLoading, setComponentLoading, loadingStates } = useLoading();
+    const { setLoading, setComponentLoading, loadingStates } = useLoading();
     const [ready, setReady] = useState(false);
     const [project, setProject] = useState(null);
     const [imageSelected, setImageSelected] = useState(-1);
@@ -214,7 +244,10 @@ const PortfolioDetails = () => {
                                             <ul>
                                                 <li><strong>{lang === 'English' ? 'Category' : 'Categorie'}</strong>: {project?.category}</li>
                                                 <li><strong>{lang === 'English' ? 'Project URL' : 'Lien de Projet'}</strong>: <a href={project?.links?.demo} target="_blank">Click here</a></li>
-                                                {project?.links?.github !== '' && <li><strong>GitHub</strong> : <a href={project?.links?.github}>Click here</a></li>}
+                                                {project?.links?.github !== '' && typeof project?.links?.github === 'string' && <li><strong>GitHub</strong> : <a href={project?.links?.github}>Click here</a></li>}
+                                                {project?.links?.github && typeof project?.links?.github === 'object' && Object.keys(project?.links?.github).map((key) => (
+                                                    <li key={key}><strong>GitHub {key}</strong> : <a href={project?.links?.github[key]}>Click here</a></li>
+                                                ))}
                                             </ul>
                                         </div>
                                         <div className="portfolio-description" data-aos="fade-up" data-aos-delay="300">

@@ -7,28 +7,28 @@ import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import CodeByCisseHomePage from '../assets/codebycisse-commerce/homePage.png';
 import CodeByCisseRestAPI from '../assets/codebycisse-restapi-framework/displayModules.png';
+import CodeByCisseSocial from '../assets/codebycisse-social/profile.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "../contexts/ThemeContext";
 
-// ✅ CORRECT IMPORTS - Better icon variety
+
 import {
-    faEye,           // For "View Details" 
-    faRocket,        // For "Live Demo"
-    faCode,          // For category
-    faCodeBranch     // Alternative for GitHub (from solid icons)
+    faEye,
+    faRocket,
+    faCode,
 } from "@fortawesome/free-solid-svg-icons";
 
-// GitHub icon is in the brands package
+
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { useLoading } from "../contexts/LoadingContext";
 import { PageLoader, ImageLoader } from "./LoaderComponents";
 
 
-// ✅ IMPROVED VERSION WITH CORRECT IMPORTS
+
 const PortfolioImproved = () => {
     const [lang, setLang] = useState(localStorage.getItem('lang'));
-    const { globalLoading, setLoading, setComponentLoading, loadingStates } = useLoading();
+    const {  setLoading, setComponentLoading, loadingStates } = useLoading();
     const [ready, setReady] = useState(false);
     const { isDarkMode } = useTheme();
 
@@ -65,6 +65,23 @@ const PortfolioImproved = () => {
                 demo: 'https://codebycisse-restapi-framework-production.up.railway.app/',
                 github: 'https://github.com/omarcisse97/codebycisse-restapi-framework',
                 details: '/portfolio/details/codebycisse-restapi-framework'
+            }
+        },
+        {
+            id: 'yuconnect-social-app',
+            title: 'YuConnect Social App',
+            description: {
+                english: 'Full-stack social media platform with headless backend architecture, featuring real-time messaging, user profiles, posts, and interactive social features built with modern web technologies.',
+                french: 'Plateforme de médias sociaux complète avec architecture backend découplée, offrant messagerie en temps réel, profils d\'utilisateurs, publications et fonctionnalités sociales interactives construite avec des technologies web modernes.'
+            },
+            image: CodeByCisseSocial,
+            technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.IO', 'Express', 'Supabase', 'Tailwind CSS'],
+            category: 'Full Stack',
+            status: 'In Progress',
+            links: {
+                demo: 'https://codebycisse-social-production.up.railway.app/',
+                github: 'https://github.com/omarcisse97/codebycisse-social',
+                details: '/portfolio/details/codebycisse-social'
             }
         }
 
