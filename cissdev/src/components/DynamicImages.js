@@ -19,7 +19,11 @@ import CodeByCisseRestApiFrameworkDataDetails from '../assets/codebycisse-restap
 import CodeByCisseRestApiFrameworkDataEdit from '../assets/codebycisse-restapi-framework/dataEdit.png';
 import CodeByCisseRestApiFrameworkDataReviewDelete from '../assets/codebycisse-restapi-framework/dataReviewDelete.png';
 import CodeByCisseRestApiFrameworkDataDelete from '../assets/codebycisse-restapi-framework/dataDelete.png';
-
+import CodeByCisseSocialLogin from '../assets/codebycisse-social/logIn.png';
+import CodeByCisseSocialRegister from '../assets/codebycisse-social/register.png';
+import CodeByCisseSocialFeed from '../assets/codebycisse-social/feed.png';
+import CodeByCisseSocialProfile from '../assets/codebycisse-social/profile.png';
+import CodeByCisseSocialAvatarStudio from '../assets/codebycisse-social/updateAvatar.png';
 export const ImgProject = () => {
     return {
         codeByCisseCommerce: [
@@ -46,6 +50,13 @@ export const ImgProject = () => {
             CodeByCisseRestApiFrameworkDataEdit,
             CodeByCisseRestApiFrameworkDataReviewDelete,
             CodeByCisseRestApiFrameworkDataDelete
+        ],
+        codeByCisseSocial: [
+            CodeByCisseSocialLogin,
+            CodeByCisseSocialRegister,
+            CodeByCisseSocialFeed,
+            CodeByCisseSocialProfile,
+            CodeByCisseSocialAvatarStudio
         ]
     }
 }
