@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLoading } from "../contexts/LoadingContext";
 import { PageLoader } from "./LoaderComponents";
-import { useParams } from "react-router"
+import { useParams } from "react-router-dom"
 import Nav from "./Nav";
 import { ImgProject } from "./DynamicImages";
 import Carousel from 'react-bootstrap/Carousel';
