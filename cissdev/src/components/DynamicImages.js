@@ -24,6 +24,14 @@ import CodeByCisseSocialRegister from '../assets/codebycisse-social/register.png
 import CodeByCisseSocialFeed from '../assets/codebycisse-social/feed.png';
 import CodeByCisseSocialProfile from '../assets/codebycisse-social/profile.png';
 import CodeByCisseSocialAvatarStudio from '../assets/codebycisse-social/updateAvatar.png';
+import SoPoCountrySelection from '../assets/sopo/countrySelection.png';
+import SoPoCitySelection from '../assets/sopo/citySelection.png';
+import SoPoCategorySelection from '../assets/sopo/categorySelection.png';
+import SoPoListingForSale from '../assets/sopo/forSaleListing.png';
+import SoPoListingHousing from '../assets/sopo/housingListing.png';
+import SoPoListingDetails from '../assets/sopo/listingDetails.png';
+import SoPoCreatePost from '../assets/sopo/createPostCategories.png';
+import SoPoCreatePostForm from '../assets/sopo/createListing.png';
 export const ImgProject = () => {
     return {
         codeByCisseCommerce: [
@@ -57,6 +65,15 @@ export const ImgProject = () => {
             CodeByCisseSocialFeed,
             CodeByCisseSocialProfile,
             CodeByCisseSocialAvatarStudio
-        ]
+        ],
+        sopo: {
+            SoPoCategorySelection,
+            SoPoListingForSale,
+            SoPoListingHousing,
+            SoPoCountrySelection,
+            SoPoCitySelection,
+            SoPoCreatePost,
+            SoPoCreatePostForm
+        }
     }
 }

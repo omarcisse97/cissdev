@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import CodeByCisseHomePage from '../assets/codebycisse-commerce/homePage.png';
 import CodeByCisseRestAPI from '../assets/codebycisse-restapi-framework/displayModules.png';
 import CodeByCisseSocial from '../assets/codebycisse-social/profile.png';
+import SoPo from '../assets/sopo/categorySelection.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -28,7 +29,7 @@ import { PageLoader, ImageLoader } from "./LoaderComponents";
 
 const PortfolioImproved = () => {
     const [lang, setLang] = useState(localStorage.getItem('lang'));
-    const {  setLoading, setComponentLoading, loadingStates } = useLoading();
+    const { setLoading, setComponentLoading, loadingStates } = useLoading();
     const [ready, setReady] = useState(false);
     const { isDarkMode } = useTheme();
 
@@ -82,6 +83,41 @@ const PortfolioImproved = () => {
                 demo: 'https://codebycisse-social-production.up.railway.app/',
                 github: 'https://github.com/omarcisse97/codebycisse-social',
                 details: '/portfolio/details/codebycisse-social'
+            }
+        },
+        {
+            id: 'sopo',
+            title: 'SOPO Classified Ads',
+            description: {
+                english: 'Full-stack classified ads  platform featuring advanced search and filtering, location-based listings, category management, image uploads, and dynamic content delivery. Built with modern Next.js architecture and robust database integration.',
+                french: 'Plateforme de petites annonces complète avec recherche et filtrage avancés, annonces géolocalisées, gestion de catégories, téléchargement d\'images et livraison de contenu dynamique. Construite avec l\'architecture Next.js moderne et intégration de base de données robuste.'
+            },
+            image: SoPo, 
+            technologies: [
+                'Next.js 15',
+                'TypeScript',
+                'PostgreSQL',
+                'Neon Database',
+                'Supabase Storage',
+                'Tailwind CSS 4',
+                'Vercel'
+            ],
+            category: 'Full Stack',
+            status: 'In Progress', 
+            features: [
+                'Advanced search with multiple filters',
+                'Location-based listing system',
+                'Category and subcategory management',
+                'Image upload and storage',
+                'Dynamic routing and SEO optimization',
+                'Responsive design',
+                'Real-time listing views counter',
+                'Email-based listing management'
+            ],
+            links: {
+                demo: 'https://sopo-lovat.vercel.app/', 
+                github: 'https://github.com/omarcisse97/sopo',
+                details: '/portfolio/details/sopo'
             }
         }
 

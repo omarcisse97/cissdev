@@ -73,37 +73,66 @@ const getProject = (handle) => {
             }
         },
         {
-    id: 'codebycisse-social',
-    title: 'YuConnect Social Platform',
-    description: {
-        english: 'YuConnect is a full-stack social media platform with headless backend architecture, featuring real-time messaging, user profiles, posts, and interactive social features. Built with React frontend and Node.js API server, it demonstrates modern web development practices with Socket.IO for real-time communication and PostgreSQL for robust data management.',
-        french: 'YuConnect est une plateforme de médias sociaux complète avec architecture backend découplée, offrant messagerie en temps réel, profils d\'utilisateurs, publications et fonctionnalités sociales interactives. Construite avec React en frontend et serveur API Node.js, elle démontre les pratiques modernes de développement web avec Socket.IO pour la communication temps réel et PostgreSQL pour une gestion robuste des données.'
-    },
-    images: [
-        ...ImgProject().codeByCisseSocial
-    ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.IO', 'Express', 'Tailwind CSS'],
-    category: 'Full Stack',
-    status: 'In Progress',
-    links: {
-        demo: 'https://codebycisse-social-production.up.railway.app/',
-        github: {
-            client: 'https://github.com/omarcisse97/codebycisse-social',
-            backend: 'https://github.com/omarcisse97/codebycisse-social-server'
-        }, 
-        details: '/portfolio/details/codebycisse-social'
-    },
-    conclusion: {
-        title: {
-            english: 'Modern Social Platform with Real-Time Communication',
-            french: 'Plateforme Sociale Moderne avec Communication Temps Réel'
+            id: 'codebycisse-social',
+            title: 'YuConnect Social Platform',
+            description: {
+                english: 'YuConnect is a full-stack social media platform with headless backend architecture, featuring real-time messaging, user profiles, posts, and interactive social features. Built with React frontend and Node.js API server, it demonstrates modern web development practices with Socket.IO for real-time communication and PostgreSQL for robust data management.',
+                french: 'YuConnect est une plateforme de médias sociaux complète avec architecture backend découplée, offrant messagerie en temps réel, profils d\'utilisateurs, publications et fonctionnalités sociales interactives. Construite avec React en frontend et serveur API Node.js, elle démontre les pratiques modernes de développement web avec Socket.IO pour la communication temps réel et PostgreSQL pour une gestion robuste des données.'
+            },
+            images: [
+                ...ImgProject().codeByCisseSocial
+            ],
+            technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.IO', 'Express', 'Tailwind CSS'],
+            category: 'Full Stack',
+            status: 'In Progress',
+            links: {
+                demo: 'https://codebycisse-social-production.up.railway.app/',
+                github: {
+                    client: 'https://github.com/omarcisse97/codebycisse-social',
+                    backend: 'https://github.com/omarcisse97/codebycisse-social-server'
+                },
+                details: '/portfolio/details/codebycisse-social'
+            },
+            conclusion: {
+                title: {
+                    english: 'Modern Social Platform with Real-Time Communication',
+                    french: 'Plateforme Sociale Moderne avec Communication Temps Réel'
+                },
+                text: {
+                    english: 'YuConnect demonstrates the implementation of a modern social media platform using headless architecture and real-time technologies. The project showcases full-stack development skills with emphasis on user experience, scalable backend design, and interactive social features.',
+                    french: 'YuConnect démontre l\'implémentation d\'une plateforme de médias sociaux moderne utilisant une architecture découplée et des technologies temps réel. Le projet met en valeur les compétences de développement full-stack avec un accent sur l\'expérience utilisateur, la conception backend évolutive, et les fonctionnalités sociales interactives.'
+                }
+            }
         },
-        text: {
-            english: 'YuConnect demonstrates the implementation of a modern social media platform using headless architecture and real-time technologies. The project showcases full-stack development skills with emphasis on user experience, scalable backend design, and interactive social features.',
-            french: 'YuConnect démontre l\'implémentation d\'une plateforme de médias sociaux moderne utilisant une architecture découplée et des technologies temps réel. Le projet met en valeur les compétences de développement full-stack avec un accent sur l\'expérience utilisateur, la conception backend évolutive, et les fonctionnalités sociales interactives.'
+        {
+            id: 'sopo',
+            title: 'SOPO Classified Ads Platform',
+            description: {
+                english: 'SOPO is a full-stack classified ads marketplace with modern architecture, featuring advanced search and filtering, location-based listings, category management, and image upload capabilities. Built with Next.js 15 and TypeScript, it demonstrates modern web development practices with Neon Database for robust data management and Supabase for file storage.',
+                french: 'SOPO est une plateforme de petites annonces complète avec architecture moderne, offrant recherche et filtrage avancés, annonces géolocalisées, gestion de catégories, et capacités de téléchargement d\'images. Construite avec Next.js 15 et TypeScript, elle démontre les pratiques modernes de développement web avec Neon Database pour une gestion robuste des données et Supabase pour le stockage de fichiers.'
+            },
+            images: [
+                ...ImgProject().sopo
+            ],
+            technologies: ['Next.js 15', 'TypeScript', 'PostgreSQL', 'Neon Database', 'Supabase Storage', 'Tailwind CSS 4', 'Vercel'],
+            category: 'Full Stack',
+            status: 'In Progress',
+            links: {
+                demo: 'https://sopo-lovat.vercel.app/',
+                github: 'https://github.com/omarcisse97/sopo',
+                details: '/portfolio/details/sopo'
+            },
+            conclusion: {
+                title: {
+                    english: 'Modern Classified Ads Platform with Advanced Features',
+                    french: 'Plateforme de Petites Annonces Moderne avec Fonctionnalités Avancées'
+                },
+                text: {
+                    english: 'SOPO demonstrates the implementation of a comprehensive classified ads marketplace using cutting-edge web technologies. The project showcases full-stack development expertise with emphasis on user experience, scalable database design, and advanced search capabilities for location-based content discovery.',
+                    french: 'SOPO démontre l\'implémentation d\'une plateforme de petites annonces complète utilisant des technologies web de pointe. Le projet met en valeur l\'expertise de développement full-stack avec un accent sur l\'expérience utilisateur, la conception de base de données évolutive, et les capacités de recherche avancées pour la découverte de contenu géolocalisé.'
+                }
+            }
         }
-    }
-}
     ];
     return projects.find(p => p.id === handle) || null;
 };
