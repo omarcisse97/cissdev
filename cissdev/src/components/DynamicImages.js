@@ -66,7 +66,7 @@ export const ImgProject = () => {
             CodeByCisseSocialProfile,
             CodeByCisseSocialAvatarStudio
         ],
-        sopo: {
+        sopo: [
             SoPoCategorySelection,
             SoPoListingForSale,
             SoPoListingHousing,
@@ -74,6 +74,6 @@ export const ImgProject = () => {
             SoPoCitySelection,
             SoPoCreatePost,
             SoPoCreatePostForm
-        }
+        ]
     }
 }
